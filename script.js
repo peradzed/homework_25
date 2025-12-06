@@ -73,7 +73,8 @@ async function fetchUser() {
     div.innerHTML = `
       <h3>${user.name}</h3>
       <p><strong>Username:</strong> ${user.username}</hp>
-      <p><strong>Email:</strong> ${user.email}</p>
+      <p><strong>Email:</strong><a href="mailto:${user.email}">${user.email}</a></p>
+                
       <p><strong>Address:</strong> ${user.address.city},${user.address.street},${user.address.suite} </p>
       <p><strong>Number:</strong> ${user.phone}</p>
       <p><strong>Website:</strong> <a href="https://${user.website}" target="_blank">${user.website}</a></p>
