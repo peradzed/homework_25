@@ -85,3 +85,29 @@ async function fetchUser() {
 }
 
 fetchUser();
+
+const select = document.querySelector("#userSelect");
+const postsContainer = document.querySelector("#posts");
+
+select.addEventListener("change", async (e) => {
+  const userId = Number(e.target.value);
+
+  postsContainer.innerHTML = ""; // წავშალოთ ძველი პოსტები
+
+  if (!userId) return; // თუ არაფერს აირჩევს
+
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const posts = await response.json();
+
+  const userPosts = posts.filter((post) => post.userId === userId);
+
+  userPosts.forEach((post) => {
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <h3>${post.title}</h3>
+      <p>${post.body}</p>
+      <hr>
+    `;
+    postsContainer.appendChild(div);
+  });
+});
