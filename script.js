@@ -76,7 +76,7 @@ async function fetchUser() {
       <p><strong>Email:</strong> ${user.email}</p>
       <p><strong>Address:</strong> ${user.address.city},${user.address.street},${user.address.suite} </p>
       <p><strong>Number:</strong> ${user.phone}</p>
-      <p><strong>Website:</strong> ${user.website}</p>
+      <p><strong>Website:</strong> <a href="https://${user.website}" target="_blank">${user.website}</a></p>
       <p><strong>Company:</strong> ${user.company.name}</p>
     `;
     profileContainer.appendChild(div);
