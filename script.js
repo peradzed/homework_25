@@ -71,7 +71,7 @@ async function fetchUser() {
   chooseUser.forEach((user) => {
     const div = document.createElement("div");
     div.innerHTML = `
-      <h3>${user.name}</h3>
+      <h2>${user.name}</h2>
       <p><strong>Username:</strong> ${user.username}</hp>
       <p><strong>Email:</strong><a href="mailto:${user.email}">${user.email}</a></p>
                 
