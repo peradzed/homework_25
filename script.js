@@ -53,6 +53,7 @@ async function fetchPosts() {
       <h2>Post Title: ${user.title}</h2>
       <h3> UserID ${user.userId}</h3>
       <p>${user.body}</p>
+      <hr>
     `;
     container.appendChild(div);
   });
@@ -92,9 +93,9 @@ const postsContainer = document.querySelector("#posts");
 select.addEventListener("change", async (e) => {
   const userId = Number(e.target.value);
 
-  postsContainer.innerHTML = ""; // წავშალოთ ძველი პოსტები
+  postsContainer.innerHTML = "";
 
-  if (!userId) return; // თუ არაფერს აირჩევს
+  if (!userId) return;
 
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   const posts = await response.json();
